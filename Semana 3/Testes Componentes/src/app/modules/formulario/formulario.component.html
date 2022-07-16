@@ -1,0 +1,52 @@
+<h1>{{ title }}</h1>
+<hr>
+
+<form [formGroup]="formFun">   
+    <div class="grid p-fluid">
+        <div class="col-12 md:col-3">
+            <h5 for="name">Nome: </h5>
+            <input id="name" type="text" formControlName="nome" />
+        </div>
+        <div class="col-12 md:col-3">
+            <h5 for="email">E-mail: </h5>
+            <input id="email" type="email" formControlName="email" />
+        </div>
+        <div class="col-12 md:col-3">
+            <h5 for="dtNascimento">Data Nascimento: </h5>
+            <input id="dtNascimento" type="date" formControlName="dataNascimento" />
+        </div>
+        <div class="col-12 md:col-3">
+            <h5 for="funcao">Função: </h5>
+            <select name="funcao" id="funcao" formControlName="funcao">
+                <option value="diretor">Diretor</option>
+                <option value="gestor">Gestor</option>
+                <option value="programador">Programador</option>
+                <option value="estagiario">Estágiario</option>
+            </select>
+        </div>
+        <div class="col-12 md:col-12">
+            <p-button label="Cadastrar Funcionário" [disabled]="formFun.invalid" (click)="salvar()"></p-button>
+        </div>
+    </div>
+</form>
+
+<hr>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Data Nascimento</th>
+            <th>Função</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let fun of funcionarios">
+            <td>{{ fun.nome }}</td>
+            <td>{{ fun.email }}</td>
+            <td>{{ fun.dataNascimento }}</td>
+            <td>{{ fun.funcao }}</td>
+        </tr>
+    </tbody>
+</table>
