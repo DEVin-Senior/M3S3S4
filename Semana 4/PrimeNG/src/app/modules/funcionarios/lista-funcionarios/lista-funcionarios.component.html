@@ -1,0 +1,27 @@
+<div class="grid mt-2">
+    <div class="col-6">
+        <h3 class="ml-5">Funcionarios</h3>
+    </div>
+    <div class="col-6 text-right">
+        <p-button class="mr-5" label="Cadastrar" (click)="openCadastrar()"></p-button>
+    </div>
+</div>
+
+<p-table [value]="funcionarios" responsiveLayout="scroll">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Nome</th>
+            <th>Função</th>
+            <th>Data de Nascimento</th>
+            <th>Ativo</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-fun>
+        <tr>
+            <td>{{fun.nome}}</td>
+            <td>{{fun.funcao}}</td>
+            <td>{{fun.dataNascimento}}</td>
+            <td>{{fun.ativo ? "SIM" : "NÃO"}}</td>
+        </tr>
+    </ng-template>
+</p-table>

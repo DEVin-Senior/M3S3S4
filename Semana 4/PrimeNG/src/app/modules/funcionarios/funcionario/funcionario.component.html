@@ -1,0 +1,36 @@
+<p-toast></p-toast>
+
+<div class="grid formgrid m-5">
+    <div class="col-6">
+        <h3 class="">Funcionario</h3>
+    </div>
+    <div class="col-6 text-right">
+        <p-button class="mr-5" label="Voltar" (click)="voltar()"></p-button>
+    </div>
+</div>
+
+<form [formGroup]="formFun">
+    <div class="p-fluid grid formgrid m-5">
+        <div class="col-3">
+            <label for="">Nome</label>
+            <input type="text" pInputText formControlName="nome" />
+        </div>
+        <div class="col-3">
+            <label for="">Data de Nascimento</label>
+            <p-calendar dateFormat="dd/mm/yy" formControlName="dataNascimento"></p-calendar>
+        </div>
+        <div class="col-3">
+            <label for="">Função</label>
+            <p-dropdown [options]="funcoes" placeholder="Selecione a função" formControlName="funcao"></p-dropdown>
+        </div>
+        <div class="col-3">
+            <label for="" class="block">Ativo</label>
+            <p-checkbox formControlName="ativo" [binary]="true" inputId="binary"></p-checkbox>
+        </div>
+    </div>    
+    <div class="grid ml-5">        
+        <div class="col-12">
+            <p-button label="Salvar" (click)="salvar()"></p-button>
+        </div>
+    </div>
+</form>

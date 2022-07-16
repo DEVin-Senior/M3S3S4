@@ -1,0 +1,14 @@
+nav {
+    width: 100%;
+    padding: 10px;
+    background-color: bisque;
+
+    div.logo {
+        float: left;
+    }
+
+    div.menu ul li {
+        margin-left: 50px;
+        display: inline;
+    }
+}
